@@ -1,8 +1,9 @@
 import React from 'react';
+import { FeedbackWrapper } from './Statistic.styled';
 
 const Statistics = ({ good, neutral, bad, total, positivePercentage }) => {
   return (
-    <div>
+    <FeedbackWrapper>
       <p>
         Good :<span> {good}</span>
       </p>
@@ -16,10 +17,9 @@ const Statistics = ({ good, neutral, bad, total, positivePercentage }) => {
         Total :<span> {total}</span>
       </p>
       <p>
-        Positive feedback :
-        <span> {positivePercentage.toFixed(2)} %</span>
+        Positive feedback :<span> {Math.round(positivePercentage)} %</span>
       </p>
-    </div>
+    </FeedbackWrapper>
   );
 };
 export default Statistics;

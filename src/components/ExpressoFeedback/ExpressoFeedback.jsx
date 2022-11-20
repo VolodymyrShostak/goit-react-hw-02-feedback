@@ -1,6 +1,7 @@
 import React from 'react';
-import s from './ExoressoFeedback.js';
+import { Wrapper, Title,  } from './ExoressoFeedback.styled.js';
 // import Section from './Section.js';
+
 import Controls from '../Controls';
 import Statistics from '../Statistics';
 import Notification from '../Notification';
@@ -50,9 +51,9 @@ class Feedback extends React.Component {
     const { positivePercentage } = this.state;
 
     return (
-      <div className={s.feedback}>
+      <Wrapper>
         {/* <Section title="Please leave feedback"> */}
-        <h2>Please leave feedback</h2>
+        <Title>Please, leave feedback</Title>
         <Controls
           onFeedbackGood={this.getFeedbackGood}
           onFeedbackNeutral={this.getFeedbackNeutral}
@@ -62,7 +63,7 @@ class Feedback extends React.Component {
         {/* <Section title="Statistics"> */}
         {this.state.total > 0 ? (
           <>
-            <h2>Statistics</h2>
+            <Title>Statistics</Title>
             <Statistics
               good={good}
               neutral={neutral}
@@ -72,10 +73,10 @@ class Feedback extends React.Component {
             />
           </>
         ) : (
-          <Notification message="There is no feedback" />
+          <Notification message="There is no feedback..." />
         )}
         {/* </Section> */}
-      </div>
+      </Wrapper>
     );
   }
 }
