@@ -41,7 +41,13 @@ class Feedback extends React.Component {
     });
   };
 
-  render() {
+    render() {
+        const { good } = this.state;
+        const { bad } = this.state;
+        const { neutral } = this.state;
+        const { total } = this.state;
+        const { positivePercentage } = this.state;
+        
     return (
       <div className={s.feedback}>
         {/* <Section title="Please leave feedback"> */}
@@ -57,11 +63,11 @@ class Feedback extends React.Component {
           <>
             <h2>Statistics</h2>
             <Statistics
-              good={this.state.good}
-              neutral={this.state.neutral}
-              bad={this.state.bad}
-              total={this.state.total}
-              positivePercentage={this.state.positivePercentage}
+              good={good}
+              neutral={neutral}
+              bad={bad}
+              total={total}
+              positivePercentage={positivePercentage}
             />
           </>
         ) : (
