@@ -1,5 +1,5 @@
 import React from 'react';
-import Feedback from '../components/ExpressoFeedback/ExpressoFeedback';
+import Feedback from '../components/ExpressoFeedback';
 
 export const App = () => {
   return (

@@ -1,9 +1,10 @@
 import React from 'react';
 import s from './ExoressoFeedback.js';
 // import Section from './Section.js';
-import Controls from '../Controls/Controls.js';
-import Statistics from '../Statistics/Statistic.js';
-import Notification from '../Notification/Notification.js';
+import Controls from '../Controls';
+import Statistics from '../Statistics';
+import Notification from '../Notification';
+
 class Feedback extends React.Component {
   state = {
     good: 0,
@@ -41,13 +42,13 @@ class Feedback extends React.Component {
     });
   };
 
-    render() {
-        const { good } = this.state;
-        const { bad } = this.state;
-        const { neutral } = this.state;
-        const { total } = this.state;
-        const { positivePercentage } = this.state;
-        
+  render() {
+    const { good } = this.state;
+    const { bad } = this.state;
+    const { neutral } = this.state;
+    const { total } = this.state;
+    const { positivePercentage } = this.state;
+
     return (
       <div className={s.feedback}>
         {/* <Section title="Please leave feedback"> */}
