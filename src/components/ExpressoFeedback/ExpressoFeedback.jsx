@@ -1,9 +1,9 @@
 import React from 'react';
 import s from './ExoressoFeedback.js';
 // import Section from './Section.js';
-import Controls from './Controls.js';
-import Statistics from './Statistic.js';
-
+import Controls from '../Controls/Controls.js';
+import Statistics from '../Statistics/Statistic.js';
+import Notification from '../Notification/Notification.js';
 class Feedback extends React.Component {
   state = {
     good: 0,
@@ -53,15 +53,20 @@ class Feedback extends React.Component {
         />
         {/* </Section> */}
         {/* <Section title="Statistics"> */}
-        <h2>Statistics</h2>
-
-        <Statistics
-          good={this.state.good}
-          neutral={this.state.neutral}
-          bad={this.state.bad}
-          total={this.state.total}
-          positivePercentage={this.state.positivePercentage}
-        />
+        {this.state.total > 0 ? (
+          <>
+            <h2>Statistics</h2>
+            <Statistics
+              good={this.state.good}
+              neutral={this.state.neutral}
+              bad={this.state.bad}
+              total={this.state.total}
+              positivePercentage={this.state.positivePercentage}
+            />
+          </>
+        ) : (
+          <Notification message="There is no feedback" />
+        )}
         {/* </Section> */}
       </div>
     );
