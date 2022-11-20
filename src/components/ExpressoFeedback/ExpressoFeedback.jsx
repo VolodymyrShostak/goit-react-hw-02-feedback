@@ -1,6 +1,6 @@
 import React from 'react';
 import s from './ExoressoFeedback.js';
-import Section from './Section.js';
+// import Section from './Section.js';
 import Controls from './Controls.js';
 import Statistics from './Statistic.js';
 
@@ -44,22 +44,25 @@ class Feedback extends React.Component {
   render() {
     return (
       <div className={s.feedback}>
-        <Section title="Please leave feedback">
-          <Controls
-            onFeedbackGood={this.getFeedbackGood}
-            onFeedbackNeutral={this.getFeedbackNeutral}
-            onFeedbackBad={this.getFeedbackBad}
-          />
-        </Section>
-        <Section title="Statistics">
-          <Statistics
-            good={this.state.good}
-            neutral={this.state.neutral}
-            bad={this.state.bad}
-            total={this.state.total}
-            positivePercentage={this.state.positivePercentage}
-          />
-        </Section>
+        {/* <Section title="Please leave feedback"> */}
+        <h2>Please leave feedback</h2>
+        <Controls
+          onFeedbackGood={this.getFeedbackGood}
+          onFeedbackNeutral={this.getFeedbackNeutral}
+          onFeedbackBad={this.getFeedbackBad}
+        />
+        {/* </Section> */}
+        {/* <Section title="Statistics"> */}
+        <h2>Statistics</h2>
+
+        <Statistics
+          good={this.state.good}
+          neutral={this.state.neutral}
+          bad={this.state.bad}
+          total={this.state.total}
+          positivePercentage={this.state.positivePercentage}
+        />
+        {/* </Section> */}
       </div>
     );
   }
