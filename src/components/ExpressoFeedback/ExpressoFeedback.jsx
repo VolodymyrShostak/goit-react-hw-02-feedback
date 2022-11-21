@@ -1,6 +1,6 @@
 import React from 'react';
-import { Wrapper, Title,  } from './ExoressoFeedback.styled.js';
-// import Section from './Section.js';
+import { Wrapper } from './ExoressoFeedback.styled.js';
+import Section from '../Section/Section.jsx';
 
 import Controls from '../Controls';
 import Statistics from '../Statistics';
@@ -52,30 +52,28 @@ class Feedback extends React.Component {
 
     return (
       <Wrapper>
-        {/* <Section title="Please leave feedback"> */}
-        <Title>Please, leave feedback</Title>
-        <Controls
-          onFeedbackGood={this.getFeedbackGood}
-          onFeedbackNeutral={this.getFeedbackNeutral}
-          onFeedbackBad={this.getFeedbackBad}
-        />
-        {/* </Section> */}
-        {/* <Section title="Statistics"> */}
-        {this.state.total > 0 ? (
-          <>
-            <Title>Statistics</Title>
-            <Statistics
-              good={good}
-              neutral={neutral}
-              bad={bad}
-              total={total}
-              positivePercentage={positivePercentage}
-            />
-          </>
-        ) : (
-          <Notification message="There is no feedback..." />
-        )}
-        {/* </Section> */}
+        <Section title="Please, leave feedback">
+          <Controls
+            onFeedbackGood={this.getFeedbackGood}
+            onFeedbackNeutral={this.getFeedbackNeutral}
+            onFeedbackBad={this.getFeedbackBad}
+          />
+        </Section>
+        <Section title="Statistics">
+          {this.state.total > 0 ? (
+            <>
+              <Statistics
+                good={good}
+                neutral={neutral}
+                bad={bad}
+                total={total}
+                positivePercentage={positivePercentage}
+              />
+            </>
+          ) : (
+            <Notification message="There is no feedback..." />
+          )}
+        </Section>
       </Wrapper>
     );
   }

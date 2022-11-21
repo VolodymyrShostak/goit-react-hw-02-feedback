@@ -9,7 +9,5 @@ border: 2px solid black;
 border-radius: 10px;
 
 `
-export const Title = styled.h2`
-margin: 20px auto ;
-`
+
 
