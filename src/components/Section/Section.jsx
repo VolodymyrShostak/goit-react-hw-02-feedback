@@ -1,4 +1,6 @@
+import PropTypes from 'prop-types';
 import React from 'react';
+
 import { Title } from './Section.styled.js';
 
 const Section = ({ title, children }) => {
@@ -10,3 +12,6 @@ const Section = ({ title, children }) => {
   );
 };
 export default Section;
+Section.propTypes = {
+  children: PropTypes.string.isRequired,
+}
