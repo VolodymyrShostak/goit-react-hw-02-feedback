@@ -3,16 +3,16 @@ import PropTypes from 'prop-types';
 
 import { ButtonWrapper, Button } from "./Controls.styled";
 
-const Controls = ({ onFeedbackGood, onFeedbackNeutral, onFeedbackBad }) => {
+const Controls = ({  onFeedback }) => {
   return (
     <ButtonWrapper>
-      <Button type="button" onClick={onFeedbackGood}>
+      <Button type="button" name="good" onClick={onFeedback}>
         Good
       </Button>
-      <Button type="button" onClick={onFeedbackNeutral}>
+      <Button type="button" name="neutral" onClick={onFeedback}>
         Neutral
       </Button>
-      <Button type="button" onClick={onFeedbackBad}>
+      <Button type="button" name="bad" onClick={onFeedback}>
         Bad
       </Button>
     </ButtonWrapper>
@@ -21,7 +21,6 @@ const Controls = ({ onFeedbackGood, onFeedbackNeutral, onFeedbackBad }) => {
 export default Controls;
 
 Controls.propTypes = {
-  onFeedbackBad: PropTypes.func.isRequired,
-  onFeedbackGood: PropTypes.func.isRequired,
-  onFeedbackNeutral: PropTypes.func.isRequired,
+  onFeedback: PropTypes.func.isRequired,
+  
 };

@@ -13,30 +13,17 @@ class Feedback extends React.Component {
     bad: 0,
   };
 
-  getFeedbackGood = () => {
+  getFeedback = e => {
+    const {
+      target: { name }
+    } = e;
     this.setState(prevState => {
       return {
-        good: prevState.good + 1,
-       
+        [name]: prevState[name] +1,
       };
     });
   };
-  getFeedbackNeutral = () => {
-    this.setState(prevState => {
-      return {
-        neutral: prevState.neutral + 1,
-       
-      };
-    });
-  };
-  getFeedbackBad = () => {
-    this.setState(prevState => {
-      return {
-        bad: prevState.bad + 1,
-       
-      };
-    });
-  };
+  
   counterFeedback = () => {
     return this.state.good + this.state.neutral + this.state.bad;
   };
@@ -51,9 +38,7 @@ class Feedback extends React.Component {
       <Wrapper>
         <Section title="Please, leave feedback">
           <Controls
-            onFeedbackGood={this.getFeedbackGood}
-            onFeedbackNeutral={this.getFeedbackNeutral}
-            onFeedbackBad={this.getFeedbackBad}
+            onFeedback={this.getFeedback}
           />
         </Section>
         <Section title="Statistics">
