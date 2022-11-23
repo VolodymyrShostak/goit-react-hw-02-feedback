@@ -11,8 +11,7 @@ class Feedback extends React.Component {
     good: 0,
     neutral: 0,
     bad: 0,
-    total: 0,
-    positivePercentage: 0,
+   
   };
   getFeedbackGood = () => {
     this.setState(prevState => {
@@ -44,12 +43,8 @@ class Feedback extends React.Component {
   };
 
   render() {
-    const { good } = this.state;
-    const { bad } = this.state;
-    const { neutral } = this.state;
-    const { total } = this.state;
-    const { positivePercentage } = this.state;
-
+    const { good, positivePercentage, total, neutral, bad } = this.state;
+   
     return (
       <Wrapper>
         <Section title="Please, leave feedback">
